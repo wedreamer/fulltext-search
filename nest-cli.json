@@ -1,8 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/fulltext-search/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/fulltext-search/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/fulltext-search",
+  "projects": {
+    "fulltext-search": {
+      "type": "application",
+      "root": "apps/fulltext-search",
+      "entryFile": "main",
+      "sourceRoot": "apps/fulltext-search/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/fulltext-search/tsconfig.app.json"
+      }
+    },
+    "sub-mongo-change": {
+      "type": "application",
+      "root": "apps/sub-mongo-change",
+      "entryFile": "main",
+      "sourceRoot": "apps/sub-mongo-change/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/sub-mongo-change/tsconfig.app.json"
+      }
+    }
   }
 }
