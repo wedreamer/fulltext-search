@@ -1,17 +1,14 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
-
-export type BookDocument = HydratedDocument<Book>;
 
 @Schema()
 export class Book {
-  @Prop()
+  @Prop({ type: String, required: true })
   name!: string;
 
-  @Prop({ default: '' })
+  @Prop({ type: String, default: '', required: true })
   describe!: string;
 
-  @Prop()
+  @Prop({ type: String, required: true })
   breed!: string;
 }
 
