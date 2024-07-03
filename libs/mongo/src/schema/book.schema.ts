@@ -10,6 +10,10 @@ export class Book {
 
   @Prop({ type: String, required: true })
   breed!: string;
+
+  // 分词之后的结果
+  @Prop({ type: String, required: false, select: false })
+  t?: string | null;
 }
 
 export const BookSchema = SchemaFactory.createForClass(Book);
