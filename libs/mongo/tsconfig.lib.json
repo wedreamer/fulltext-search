@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": true,
+    "strict": true,
     "outDir": "../../dist/libs/mongo"
   },
   "include": ["src/**/*"],
