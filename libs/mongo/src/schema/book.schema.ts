@@ -14,7 +14,7 @@ export class Book {
   breed!: string;
 
   // 分词之后的结果
-  @Prop({ type: String, required: false, select: false })
+  @Prop({ type: String, required: false, select: false, index: 'text' })
   t?: string | null;
 }
 

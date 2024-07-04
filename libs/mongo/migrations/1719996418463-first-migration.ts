@@ -2,7 +2,6 @@
 
 import getModels from '@app/mongo/getModel';
 import { Book } from '@app/mongo/schema/book.schema';
-import bookSplitWord from '@app/mongo/splitword/book';
 
 export async function up(): Promise<void> {
   // Write migration here
