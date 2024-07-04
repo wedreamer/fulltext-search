@@ -1,6 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
-@Schema()
+export const bookCollName = 'books';
+
+@Schema({ collection: bookCollName })
 export class Book {
   @Prop({ type: String, required: true })
   name!: string;

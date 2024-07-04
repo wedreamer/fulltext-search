@@ -23,7 +23,7 @@ export async function up(): Promise<void> {
         },
       ] as Book[]
     ).map(async (item) => {
-      item.t = await bookSplitWord(item);
+      // item.t = await bookSplitWord(item);
       return item;
     }),
   );
