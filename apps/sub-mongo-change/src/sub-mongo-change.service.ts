@@ -65,6 +65,7 @@ export class SubMongoChangeService {
               const newOne = await model.findById(id);
               if (!newOne) return;
               const t = await splitword(newOne);
+              this._logger.warn(`分词结果: ${t}`);
               newOne.t = t;
               await newOne.save();
               this._logger.debug(
@@ -76,6 +77,7 @@ export class SubMongoChangeService {
               const newOne = await model.findById(id);
               if (!newOne) return;
               const t = await splitword(newOne); // 可能覆盖 接受到信息, 到处理完成 xxxxx -> .... ... -> ... A -> B -> C -> A -> B -> A -> B
+              this._logger.warn(`分词结果: ${t}`);
               newOne.t = t;
               await newOne.save();
               this._logger.debug(`一条替换记录被处理成功!+++替换 ${id}`);
@@ -87,6 +89,7 @@ export class SubMongoChangeService {
             const newOne = await model.findById(id);
             if (!newOne) return;
             const t = await splitword(newOne); // 可能覆盖 接受到信息, 到处理完成 xxxxx -> .... ... -> ... A -> B -> C -> A -> B -> A -> B
+            this._logger.warn(`分词结果: ${t}`);
             newOne.t = t;
             await newOne.save();
             this._logger.debug(`一条插入记录被处理成功!+++新增 ${id}`);

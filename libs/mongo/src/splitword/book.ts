@@ -5,7 +5,7 @@ export const watchBookFields: (keyof Book)[] = ['name', 'describe', 'breed'];
 
 const bookSplitWord = async (book: Book): Promise<string> => {
   const allWords = [book.name, book.describe, book.breed];
-  return cut(allWords.join(' ')).join('');
+  return cut(allWords.join(' ')).join(' ');
 };
 
 export default bookSplitWord;
